@@ -45,7 +45,7 @@ plugins = [
   "pynxtools-spm>=0.2.1",
   "pynxtools-xps>=0.5.4",
   "pynxtools-xrd>=0.0.7",
-  "test-north @ git+https://github.com/FAIRmat-NFDI/test-north.git@v0.1.0",
+  "test-north @ git+https://github.com/RubelMozumder/test-north.git@v0.1.0",
   "nomad-schema-plugin-run>=1.0.1",
   "nomad-schema-plugin-simulation-workflow>=1.0.1",
   "nomad-normalizer-plugin-bandstructure>=1.0",
