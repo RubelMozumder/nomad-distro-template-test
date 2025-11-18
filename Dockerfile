@@ -104,8 +104,8 @@ RUN set -ex && \
 
 RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
-    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    # uv run --with nomad-docs --directory docs mkdocs build \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml
+    # uv run --with nomad-docs --directory docs mkdocs build
     # && mkdir -p built_docs \
     # && cp -r docs/site/* built_docs
 
