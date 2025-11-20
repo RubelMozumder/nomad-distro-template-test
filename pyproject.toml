@@ -21,7 +21,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 dependencies = [
-  "nomad-lab[parsing, infrastructure]>=1.4.0",
+  "nomad-lab[parsing, infrastructure]==1.4.1.dev113+gc5e1322f0",
   "setuptools",
 ]
 
@@ -55,15 +55,17 @@ plugins = [
   "nomad-normalizer-plugin-simulation-workflow>=1.0",
   "eelsdbconverter @ git+https://github.com/nomad-coe/nomad-parser-eelsdb.git@entry-point",
   "nomad-parser-plugins-electronic>=1.0",
+  "nomad-parser-plugins-database>=1.0",
   "nomad-parser-plugins-atomistic>=1.0",
   "nomad-parser-plugins-workflow>=1.0",
-  "nomad-parser-plugins-database>=1.0",
+  "test-north @ git+https://github.com/RubelMozumder/test-north.git@main",
+  # "nomad-docs==0.1.3",
 ]
 jupyter = ["jupyter-events"]
 gpu-action = []
 cpu-action = []
 
-dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.4"]
+dev = ["nomad-lab[parsing, infrastructure, dev]==1.4.1.dev113+gc5e1322f0"]
 
 [tool.uv]
 extra-index-url = [

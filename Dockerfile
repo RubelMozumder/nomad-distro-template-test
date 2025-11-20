@@ -104,10 +104,10 @@ RUN set -ex && \
 
 RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
-    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv run --with nomad-docs --directory docs mkdocs build \
-    && mkdir -p built_docs \
-    && cp -r docs/site/* built_docs
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml 
+    # uv run --with nomad-docs --directory docs mkdocs build \
+    # && mkdir -p built_docs \
+    # && cp -r docs/site/* built_docs
 
 FROM builder AS gpu_action_builder
 
@@ -136,7 +136,7 @@ COPY --chown=nomad:${UID} scripts/run.sh .
 COPY --chown=nomad:${UID} scripts/run-worker.sh .
 COPY configs/nomad.yaml nomad.yaml
 COPY pyproject.toml uv.lock /opt/
-COPY --chown=nomad:${UID} --from=docs /app/built_docs /opt/venv/lib/python${PYTHON_VERSION}/site-packages/nomad/app/static/docs
+# COPY --chown=nomad:${UID} --from=docs /app/built_docs /opt/venv/lib/python${PYTHON_VERSION}/site-packages/nomad/app/static/docs
 
 RUN mkdir -p /app/.volumes/fs \
  && chown -R nomad:${UID} /app \
