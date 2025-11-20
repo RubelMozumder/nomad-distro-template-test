@@ -134,11 +134,11 @@ services:
       retries: 5
       start_period: 15s
     deploy:
-      replicas: 4
+      replicas: 1
       resources:
         limits:
-          cpus: "4.0" # Maximum 4 CPU cores
-          memory: 8G # Maximum 8GB RAM
+          cpus: "1.0" # Maximum 4 CPU cores
+          memory: 1G # Maximum 8GB RAM
       restart_policy:
         condition: on-failure
         delay: 5s
@@ -301,27 +301,27 @@ services:
 
   # nomad logtransfer
   # to enable the logtransfer service run "docker compose --profile with_logtransfer up"
-  logtransfer:
-    restart: unless-stopped
-    image: ghcr.io/rubelmozumder/nomad-distro-template-test:pr-6
-    platform: linux/amd64
-    container_name: nomad_oasis_logtransfer
-    environment:
-      NOMAD_SERVICE: nomad_oasis_logtransfer
-      NOMAD_ELASTIC_HOST: elastic
-      NOMAD_MONGO_HOST: mongo
-    env_file:
-      - ./.env
-    depends_on:
-      elastic:
-        condition: service_healthy
-      mongo:
-        condition: service_healthy
-    volumes:
-      # - ./configs/nomad.yaml:/app/nomad.yaml
-      - ./.volumes/fs:/app/.volumes/fs
-    command: python -m nomad.cli admin run logtransfer
-    profiles: ["with_logtransfer"]
+  # logtransfer:
+  #   restart: unless-stopped
+  #   image: ghcr.io/rubelmozumder/nomad-distro-template-test:pr-6
+  #   platform: linux/amd64
+  #   container_name: nomad_oasis_logtransfer
+  #   environment:
+  #     NOMAD_SERVICE: nomad_oasis_logtransfer
+  #     NOMAD_ELASTIC_HOST: elastic
+  #     NOMAD_MONGO_HOST: mongo
+  #   env_file:
+  #     - ./.env
+  #   depends_on:
+  #     elastic:
+  #       condition: service_healthy
+  #     mongo:
+  #       condition: service_healthy
+  #   volumes:
+  #     # - ./configs/nomad.yaml:/app/nomad.yaml
+  #     - ./.volumes/fs:/app/.volumes/fs
+  #   command: python -m nomad.cli admin run logtransfer
+  #   profiles: ["with_logtransfer"]
 
   # nomad proxy (a reverse proxy for nomad)
   proxy:
