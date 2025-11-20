@@ -7064,7 +7064,7 @@ wheels = [
 [[package]]
 name = "test-north"
 version = "0.1.0"
-source = { git = "https://github.com/RubelMozumder/test-north.git?rev=main#b7609c1ee0bccee6b1cfdaa5d45a87cb2d107b72" }
+source = { git = "https://github.com/RubelMozumder/test-north.git?rev=main#6c4c2a595eb274dfa7d728c865d66556b529a878" }
 dependencies = [
     { name = "click" },
     { name = "pynxtools-spm" },
