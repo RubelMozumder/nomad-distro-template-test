@@ -1,0 +1,86 @@
+{
+  "tool": "test_north.north_entry_points:north_tool",
+  "username": "mozumder",
+  "data": {
+    "display_name": "SPM",
+    "short_description": "Jupyter Notebook server in NOMAD NORTH.",
+    "description": "Test SPM: Scanning Probe Microscopy Jupyter Notebook",
+    "image": "ghcr.io/rubelmozumder/test-north/jupyter:latest",
+    "image_pull_policy": "Always",
+    "privileged": false,
+    "seccomp_unconfined": false,
+    "use_gpu": false,
+    "default_url": "/lab",
+    "path_prefix": "lab/tree",
+    "with_path": true,
+    "file_extensions": [
+      "ipynb",
+      "nxs",
+      "h5",
+      "hdf5"
+    ],
+    "mount_path": "/home/jovyan",
+    "icon": "logo/jupyter.svg",
+    "maintainer": [
+      {
+        "name": "Rubel Mozumder",
+        "email": "rubel.mozumder@physik.hu-berlin.de"
+      }
+    ],
+    "external_mounts": [],
+    "name": "test_north.north_entry_points:north_tool",
+    "state": "starting"
+  }
+  "response_header":  {access-control-allow-credentials: true 
+                        access-control-allow-origin: http://localhost 
+                        access-control-expose-headers: Content-Disposition 
+                        connection: keep-alive 
+                        content-length: 722 
+                        content-type: application/json 
+                        date: Thu,20 Nov 2025 10:10:46 GMT 
+                        server: nginx/1.27.4 
+                        vary: Origin }
+}
+
+
+{  "tool": "xps",
+  "username": "mozumder",
+  "data": {
+    "short_description": "An example for analyzing XPS data.",
+    "description": "### **XPES**: X-ray Photoelectron Spectroscopy\nIncludes tools for analyzing X-ray Photoelectron Spectroscopy (XPS) spectra and converting SPECS SLE files into NeXus.",
+    "image": "gitlab-registry.mpcdf.mpg.de/nomad-lab/north/xps:master",
+    "image_pull_policy": "Always",
+    "privileged": false,
+    "seccomp_unconfined": false,
+    "use_gpu": false,
+    "default_url": "/lab",
+    "path_prefix": "lab/tree",
+    "with_path": true,
+    "file_extensions": [
+      "ipynb",
+      "nxs",
+      "h5",
+      "hdf5"
+    ],
+    "mount_path": "/home/jovyan",
+    "icon": "logo/jupyter.svg",
+    "maintainer": [
+      {
+        "name": "Lukas Pielsticker",
+        "email": "lukas.pielsticker@physik.hu-berlin.de"
+      }
+    ],
+    "external_mounts": [],
+    "name": "xps",
+    "state": "running"
+  }
+  2response_header": {access-control-allow-credentials: true 
+ access-control-allow-origin: http://localhost 
+ access-control-expose-headers: Content-Disposition 
+ connection: keep-alive 
+ content-length: 749 
+ content-type: application/json 
+ date: Thu,20 Nov 2025 11:06:11 GMT 
+ server: nginx/1.27.4 
+ vary: Origin }
+}
